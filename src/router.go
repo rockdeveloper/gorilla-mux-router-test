@@ -1,18 +1,23 @@
 package main
 
 import (
-  "fmt",
+  "fmt"
+  "net/http"
   "github.com/gorilla/mux"
 )
 
 
-func Handler() {
-    
+func Handler(w http.ResposeWriter, r *http.Request) {
+    w.Header().Set('Content-Type', 'text/html')
+
+    fmt.Fprint(w, "<h1>Hello</h1>");
 }
 
 
 func main() {
     r := mux.NewRouter()
+
     r.HandleFunc("/", Handler)
-    http.Handle("/", r)
+
+    http.ListenAndServe(":3000", r)
 }
