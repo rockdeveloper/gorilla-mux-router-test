@@ -7,7 +7,7 @@ import (
 )
 
 
-func Handler(w http.ResposeWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
     w.Header().Set('Content-Type', 'text/html')
 
     fmt.Fprint(w, "<h1>Hello</h1>");
