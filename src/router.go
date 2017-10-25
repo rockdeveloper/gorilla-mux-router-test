@@ -10,7 +10,7 @@ import (
 func Handler(w http.ResponseWriter, r *http.Request) {
     w.Header().Set("Content-Type", "text/html")
 
-    fmt.Fprint(w, "<h1>Hello</h1>");
+    fmt.Fprint(w, "<h1>gorilla mux simple test!</h1>");
 }
 
 
